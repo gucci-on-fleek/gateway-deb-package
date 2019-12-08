@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+    paths:
+      - ".github/workflows/**"
+      - "build-deb.sh"
 
 jobs:
   build:
@@ -18,11 +21,11 @@ jobs:
             "debian:testing",
             "balenalib/raspberrypi3-debian:buster",
             "balenalib/raspberrypi3-debian:stretch",
-            "balenalib/aarch64-ubuntu",
+            "balenalib/aarch64-ubuntu:latest",
           ]
     steps:
       - name: Install qemu
-        run: sudo apt update && sudo apt install qemu-user-static
+        run: sudo apt-get update && sudo apt install -y qemu-user-static --no-install-recommends
       - name: Checkout the repository
         uses: actions/checkout@v1
       - name: Build the Package

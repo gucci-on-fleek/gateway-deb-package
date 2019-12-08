@@ -16,7 +16,7 @@ modclean
 
 cd ..
 mkdir -p ./webthings-gateway/DEBIAN
-mkdir -p ./webthings-gateway/usr/share/
+mkdir -p ./webthings-gateway/usr/share/webthings-gateway
 mkdir -p ./webthings-gateway/usr/bin/
 cp -r gateway/build gateway/node_modules gateway/config gateway/package.json gateway/package-lock.json gateway/LICENSE ./webthings-gateway/usr/share/webthings-gateway/
 cd ./webthings-gateway/
