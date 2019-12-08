@@ -30,7 +30,7 @@ echo 'Priority: optional' >> ./DEBIAN/control
 echo 'Architecture: '$(dpkg --print-architecture) >> ./DEBIAN/control
 echo 'Maintainer: gucci-on-fleek' >> ./DEBIAN/control
 echo 'Description: webthings-gateway' >> ./DEBIAN/control
-echo 'Depends: python2, nodejs (='$(apt-cache show nodejs | awk '/Version/ {print $2}')'), npm (>=5.8.0)' >> ./DEBIAN/control
+echo 'Depends: python2, nodejs (='$(apt-cache show nodejs | awk '/Version/ {print $2}')'), npm (>=3.5)' >> ./DEBIAN/control
 
 cd ..
 dpkg-deb --build webthings-gateway
