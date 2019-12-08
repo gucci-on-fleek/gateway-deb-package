@@ -4,6 +4,7 @@ cd /root/
 git clone --depth 1 --recursive https://github.com/mozilla-iot/gateway
 cd gateway
 
+npm config set unsafe-perm true
 npm i npm@latest -g
 /usr/local/bin/npm config set unsafe-perm true
 /usr/local/bin/npm install
