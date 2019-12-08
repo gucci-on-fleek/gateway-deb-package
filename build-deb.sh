@@ -4,8 +4,8 @@ cd /root/
 git clone --depth 1 --recursive https://github.com/mozilla-iot/gateway
 cd gateway
 
-npm install
 npm i npm@latest -g
+/usr/local/bin/npm install
 /usr/local/bin/npm audit fix
 ./node_modules/.bin/webpack --display errors-only
 /usr/local/bin/npm dedupe
