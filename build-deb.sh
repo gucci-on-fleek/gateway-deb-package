@@ -6,17 +6,19 @@ cd gateway
 
 npm i npm@latest -g
 /usr/local/bin/npm install
+npm install modclean -g
 /usr/local/bin/npm audit fix
 ./node_modules/.bin/webpack --display errors-only
 /usr/local/bin/npm dedupe
 /usr/local/bin/npm prune --production
 /usr/local/bin/npm cache clean --force
+modclean
 
 cd ..
 mkdir -p ./webthings-gateway/DEBIAN
 mkdir -p ./webthings-gateway/usr/share/
 mkdir -p ./webthings-gateway/usr/bin/
-mv ./gateway/ ./webthings-gateway/usr/share/webthings-gateway/
+cp -r gateway/build gateway/node_modules gateway/config gateway/package.json gateway/package-lock.json gateway/LICENSE ./webthings-gateway/usr/share/webthings-gateway/
 cd ./webthings-gateway/
 
 echo '#!/bin/sh' > ./usr/bin/webthings-gateway
