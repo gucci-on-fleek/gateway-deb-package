@@ -17,6 +17,8 @@ jobs:
             "debian:stable",
             "debian:testing",
             "balenalib/raspberrypi3-debian:buster",
+            "balenalib/raspberrypi3-debian:stretch",
+            "balenalib/aarch64-ubuntu",
           ]
     steps:
       - name: Install qemu

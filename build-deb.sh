@@ -31,6 +31,7 @@ echo 'Version: '$(sed -nr 's/^.*"version": "(.*)",.*$/\1/p' ./usr/share/webthing
 echo 'Priority: optional' >> ./DEBIAN/control
 echo 'Architecture: '$(dpkg --print-architecture) >> ./DEBIAN/control
 echo 'Maintainer: gucci-on-fleek' >> ./DEBIAN/control
+echo 'Homepage: https://github.com/gucci-on-fleek/gateway-deb-package' >> ./DEBIAN/control
 echo 'Description: Mozilla WebThings Gateway' >> ./DEBIAN/control
 echo 'Depends: python2.7, nodejs (='$(dpkg --status nodejs | awk '/Version/ {print $2}')'), npm (>=3.5)' >> ./DEBIAN/control
 
