@@ -1,5 +1,5 @@
 apt-get update
-apt-get install -y build-essential npm nodejs python2.7 git lsb-release --no-install-recommends
+apt-get install -y ca-certificates build-essential npm nodejs python2.7 git lsb-release --no-install-recommends
 cd /root/
 git clone --depth 1 --recursive https://github.com/mozilla-iot/gateway
 cd gateway
