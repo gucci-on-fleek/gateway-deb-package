@@ -20,7 +20,7 @@ jobs:
           ]
     steps:
       - name: Install qemu
-        run: sudo apt update && sudo apt install qemu-user-binfmt
+        run: sudo apt update && sudo apt install qemu-user-static
       - name: Checkout the repository
         uses: actions/checkout@v1
       - name: Build the Package
