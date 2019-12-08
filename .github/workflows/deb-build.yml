@@ -1,0 +1,41 @@
+name: Build .deb Packages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dockerfile:
+          [ubuntu:latest, ubuntu:rolling, debian:stable, debian:testing]
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v1
+      - name: Build the Package
+        run: |
+          cat .\build-deb.sh | docker run --name=build -i ${{ matrix.node_version }}
+          docker cp build:/root/webthings-gateway.deb ./webthings-gateway.deb
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ matrix.node_version }} ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./webthings-gateway.deb
+          asset_name: ./webthings-gateway-${{ matrix.node_version }}.deb
+          asset_content_type: application/vnd.debian.binary-package
