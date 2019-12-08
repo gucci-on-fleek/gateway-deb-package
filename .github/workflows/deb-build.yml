@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         dockerfile:
-          [ubuntu:latest, ubuntu:rolling, debian:stable, debian:testing]
+          ["ubuntu:latest", "ubuntu:rolling", "debian:stable", "debian:testing"]
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v1
