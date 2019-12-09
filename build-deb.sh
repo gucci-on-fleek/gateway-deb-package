@@ -35,7 +35,8 @@ echo 'Architecture: '$(dpkg --print-architecture) >> ./DEBIAN/control
 echo 'Maintainer: gucci-on-fleek' >> ./DEBIAN/control
 echo 'Homepage: https://github.com/gucci-on-fleek/gateway-deb-package' >> ./DEBIAN/control
 echo 'Description: Mozilla WebThings Gateway' >> ./DEBIAN/control
-echo 'Depends: python2.7, nodejs (='$(dpkg --status nodejs | awk '/Version/ {print $2}')'), npm (>=3.5)' >> ./DEBIAN/control
+echo 'Depends: python2.7, nodejs (='$(dpkg --status nodejs | awk '/Version/ {print $2}')'), npm (>=3.5), ca-certificates' >> ./DEBIAN/control
+echo 'Recommends: arping, autoconf, dnsmasq, ffmpeg, git, hostapd, libboost-python-dev, libboost-thread-dev, libbluetooth-dev, libffi-dev, libglib2.0-dev, libnanomsg-dev, libnanomsg5, libtool, libudev-dev, libusb-1.0-0-dev, mosquitto, policykit-1, python-pip, python3-pip, sqlite3'  >> ./DEBIAN/control
 
 cd ..
 dpkg-deb --build webthings-gateway
