@@ -23,12 +23,12 @@ jobs:
           draft: false
           prerelease: true
       - name: Store Release URL
-        run: echo ${{ steps.create_release.outputs.upload_url }} > ~/release_url
+        run: echo ${{ steps.create_release.outputs.upload_url }} > release_url
       - name: Upload Release URL
         uses: actions/upload-artifact@v1
         with:
           name: ${{ github.sha }}
-          path: ~/release_url
+          path: release_url
 
   build:
     runs-on: ubuntu-latest
@@ -58,9 +58,9 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: ${{ github.sha }}
-          path: ~/release_url
+          path: release_url
       - name: Put Release URL into the environment
-        run: export release_url=$(cat ~/release_url)
+        run: export release_url=$(cat release_url)
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.1
