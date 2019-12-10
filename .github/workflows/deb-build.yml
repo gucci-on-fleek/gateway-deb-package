@@ -28,6 +28,16 @@ jobs:
     needs: create_release
     strategy:
       matrix:
+        dockerfile:
+          [
+            "ubuntu:latest",
+            "ubuntu:rolling",
+            "debian:stable",
+            "debian:testing",
+            "balenalib/raspberrypi3-debian:buster",
+            "balenalib/raspberrypi3-debian:stretch",
+            "balenalib/aarch64-ubuntu:latest",
+          ]
         include:
           - dockerfile: "ubuntu:latest"
             name: Ubuntu LTS
