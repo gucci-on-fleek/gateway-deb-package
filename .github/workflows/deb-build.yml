@@ -60,6 +60,7 @@ jobs:
           name: ${{ github.sha }}
           path: release_url
       - name: Put Release URL into the environment
+        id: url
         run: export release_url=$(cat release_url)
       - name: Upload Release Asset
         id: upload-release-asset
@@ -67,7 +68,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
-          upload_url: ${{ env.release_url }}
+          upload_url: ${{ steps.url.env.release_url }}
           asset_path: ./webthings-gateway.deb
           asset_name: webthings-gateway-${{ matrix.dockerfile }}.deb
           asset_content_type: application/vnd.debian.binary-package
