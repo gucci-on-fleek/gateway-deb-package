@@ -55,7 +55,7 @@ jobs:
             name: Ubuntu LTS arm64
     steps:
       - name: Install qemu
-        run: sudo apt-get update && sudo apt install -y qemu-user-static  binfmt-support --no-install-recommends
+        run: sudo apt-get update && sudo apt-get install -y qemu-user-static  binfmt-support --no-install-recommends
       - name: Checkout the repository
         uses: actions/checkout@v1
       - name: Build the Package

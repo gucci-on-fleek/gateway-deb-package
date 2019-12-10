@@ -14,7 +14,7 @@ npm i npm@latest -g
 /usr/local/bin/npm dedupe
 /usr/local/bin/npm prune --production
 /usr/local/bin/npm cache clean --force
-modclean
+modclean -r
 
 cd ..
 mkdir -p ./webthings-gateway/DEBIAN
