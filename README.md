@@ -18,7 +18,7 @@ Check the [releases](https://github.com/gucci-on-fleek/gateway-deb-package/relea
 ```bash
 sudo apt install ./webthings-gateway-{version}.deb
 ```
-<div style="text-align: center;"> or </div>
+<p align="center"> or </p>
 
 ```bash
 sudo apt install ./webthings-gateway-{version}.deb --no-install-recommends

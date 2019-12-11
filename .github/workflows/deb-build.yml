@@ -40,19 +40,19 @@ jobs:
           ]
         include:
           - dockerfile: "ubuntu:latest"
-            name: Ubuntu LTS
+            name: Ubuntu-LTS
           - dockerfile: "ubuntu:rolling"
-            name: Ubuntu Latest
+            name: Ubuntu-Latest
           - dockerfile: "debian:stable"
-            name: Debian Stable
+            name: Debian-Stable
           - dockerfile: "debian:testing"
-            name: Debian Testing
+            name: Debian-Testing
           - dockerfile: "balenalib/raspberrypi3-debian:buster"
-            name: Raspbian Buster
+            name: Raspbian-Buster
           - dockerfile: "balenalib/raspberrypi3-debian:stretch"
-            name: Raspbian Stretch
+            name: Raspbian-Stretch
           - dockerfile: "balenalib/aarch64-ubuntu:latest"
-            name: Ubuntu LTS arm64
+            name: Ubuntu-LTS-arm64
     steps:
       - name: Install qemu
         run: sudo apt-get update && sudo apt-get install -y qemu-user-static  binfmt-support --no-install-recommends
