@@ -1,6 +1,7 @@
-# .deb Packages for the [Mozilla WebThings Gateway](https://iot.mozilla.org/gateway/)
-![](https://github.com/gucci-on-fleek/gateway-deb-package/workflows/Build%20.deb%20Packages/badge.svg)
+# Depreciated!
+There is an [official package](https://github.com/mozilla-iot/gateway-deb) now, so this repository is no longer needed.
 
+# .deb Packages for the [Mozilla WebThings Gateway](https://iot.mozilla.org/gateway/)
 Very basic packages to install the [Mozilla WebThings Gateway](https://iot.mozilla.org/gateway/)
 
 ## Platforms
@@ -12,7 +13,7 @@ Builds are available for:
 | Debian | Buster (Stable), Bullseye (Testing) | x86_64 |
 | Raspbian | Buster (10), Stretch (9) | armv7
 
-Check the [releases](https://github.com/gucci-on-fleek/gateway-deb-package/releases) for downloads. Make sure to download the most recent release for the appropriate platform.
+~~Check the [releases](https://github.com/gucci-on-fleek/gateway-deb-package/releases) for downloads. Make sure to download the most recent release for the appropriate platform.~~ **Depreciated!**
 
 ## Installing
 ```bash
@@ -44,4 +45,4 @@ webthings-gateway
 Most of these issues should be pretty easy to fix, but they just haven't been quite yet.
 
 ## Contributing
-Submit an issue or a pull request if something isn't working quite right. Please include system specs (distro, architecture) and the version of the package that you used. 
+Submit an issue or a pull request if something isn't working quite right. Please include system specs (distro, architecture) and the version of the package that you used.
